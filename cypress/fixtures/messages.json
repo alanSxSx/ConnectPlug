@@ -1,0 +1,9 @@
+{
+  "mensagemProdutoCadastradoComSucesso": "Ok! Produto inserido com sucesso.",
+	"mensagemProdutoAtualizadoComSucesso": "Ok! Produto atualizado com sucesso.",
+	"mensagemProdutoRemovidoComSucesso": "Ok! Produto(s) excluído(s) com sucesso.",
+	"mensagemVendaCadastradaComSucesso": "Ok! Venda inserida com sucesso.",
+	"mensagemVendaAtualizadaComSucesso": "Ok! Venda atualizada com sucesso.",
+	"mensagemVendaRemovidaComSucesso": "Ok! Venda(s) excluída(s) com sucesso.",
+	"mensagemVendaRemovidaComSucessoAll": "Ok! Vendas excluídas com sucesso."
+}

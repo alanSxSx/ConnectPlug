@@ -1,0 +1,9 @@
+{
+  "name": "Produto que NÃO controle o estoque",
+  "categoriaProduto": "Lanches",
+	"codigoProduto":"440",
+	"valorProduto": "30,00",
+  "controleEstoque": "Não",
+	"saldoInicial":"0,00",
+	"unidade": "Un"
+}

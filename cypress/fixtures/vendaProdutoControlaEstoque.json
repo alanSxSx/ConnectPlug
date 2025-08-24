@@ -1,0 +1,24 @@
+{
+  "venda": {
+    "vendedor": "teste@qa9.com",
+    "cliente": "Consumidor Final - Padrão",
+    "produtos": [
+      {
+        "codigo": "439",
+        "categoria": "Categoria Teste",
+        "quantidade": "10,00",
+        "valor_unitario": "20,00"
+      }
+    ],
+    "pagamento": {
+      "metodo": "Dinheiro",
+      "parcelas": 1,
+      "valor_parcela": "200,00"
+    },
+    "estoque": {
+      "movimenta_estoque": true
+    }
+  }
+}
+
+

@@ -1,0 +1,9 @@
+{
+  "name": "Produto que controle o estoque",
+  "categoriaProduto": "Matéria-Prima",
+	"codigoProduto":"439",
+	"valorProduto": "20,00",
+  "controleEstoque": "Sim",
+	"saldoInicial":"0,00",
+	"unidade": "Un"
+}
