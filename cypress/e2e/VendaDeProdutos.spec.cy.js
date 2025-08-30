@@ -40,7 +40,7 @@ describe("Fluxo de venda de produtos", () => {
     cy.tentarCadastrarVendaSemItens();
   });
 
-  it.only("Deve criar uma venda de produto que movimenta o estoque", function () {
+  it("Deve criar uma venda de produto que movimenta o estoque", function () {
     // Capturar o saldo inicial do produto
     cy.capturarEstoqueProduto(
       this.produtoControlaEstoque.codigoProduto,
@@ -60,7 +60,7 @@ describe("Fluxo de venda de produtos", () => {
     });
   });
 
-  it.only("Deve criar uma venda de produto que nao movimenta o estoque", function () {
+	it("Deve criar uma venda de produto que nao movimenta o estoque", function () {
     // Captura o saldo inicial do produto
     cy.capturarEstoqueProduto(
       this.produtoNoControleEstoque.codigoProduto,
@@ -80,7 +80,7 @@ describe("Fluxo de venda de produtos", () => {
     });
   });
 
-it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZERO", function () {
+	it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZERO", function () {
     // Capturar o saldo inicial do produto
     cy.capturarEstoqueProduto(
       this.produtoControlaEstoque.codigoProduto,
@@ -100,7 +100,7 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     });
   });
 
-  it.only("Deve criar uma venda com produtos que movimenta e que não movimenta estoque juntos", function () {
+	it("Deve criar uma venda com produtos que movimenta e que não movimenta estoque juntos", function () {
 		// Captura o saldo inicial dos produtos
     cy.capturarEstoqueProduto(
       this.produtoControlaEstoque.codigoProduto,
@@ -199,7 +199,7 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     });
   });
 
-  it.only("Deve excluir os dados gerados nas vendas", function () {
+  it("Deve excluir os dados gerados nas vendas", function () {
     cy.visit("https://connectplug.com.br/sistema/vendas");
 		cy.get('.check_all').click();
 		cy.contains('a', 'Cancelar').click();
