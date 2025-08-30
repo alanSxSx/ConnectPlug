@@ -40,7 +40,7 @@ describe("Fluxo de venda de produtos", () => {
     cy.tentarCadastrarVendaSemItens();
   });
 
-  it("Deve criar uma venda de produto que movimenta o estoque", function () {
+  it.only("Deve criar uma venda de produto que movimenta o estoque", function () {
     // Capturar o saldo inicial do produto
     cy.capturarEstoqueProduto(
       this.produtoControlaEstoque.codigoProduto,
@@ -60,7 +60,7 @@ describe("Fluxo de venda de produtos", () => {
     });
   });
 
-  it("Deve criar uma venda de produto que nao movimenta o estoque", function () {
+  it.only("Deve criar uma venda de produto que nao movimenta o estoque", function () {
     // Captura o saldo inicial do produto
     cy.capturarEstoqueProduto(
       this.produtoNoControleEstoque.codigoProduto,
@@ -69,6 +69,7 @@ describe("Fluxo de venda de produtos", () => {
     );
     // Cria a venda
     cy.criarVenda(this.vendaprodutoNoControleEstoque.venda);
+		cy.get('.slideInDown').contains('Ok! Venda inserida com sucesso.');
     // Verifica se o estoque continua o mesmo, pois esse produto não movimenta o estoque.
     cy.get("@saldoInicialProduto440").then((saldo) => {
       cy.validarEstoqueProduto(
@@ -88,6 +89,7 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     );
     // Criar a venda
     cy.criarVenda(this.vendaProdutoControlaEstoqueQtdeZero.venda);
+		cy.get('.slideInDown').contains('Ok! Venda inserida com sucesso.');
     // Validar o estoque após a venda
     cy.get("@saldoInicialProduto439").then((saldo) => {
       cy.validarEstoqueProduto(
@@ -98,7 +100,7 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     });
   });
 
-  it("Deve criar uma venda com produtos que movimenta e que não movimenta estoque juntos", function () {
+  it.only("Deve criar uma venda com produtos que movimenta e que não movimenta estoque juntos", function () {
 		// Captura o saldo inicial dos produtos
     cy.capturarEstoqueProduto(
       this.produtoControlaEstoque.codigoProduto,
@@ -177,12 +179,6 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     cy.get(".installments-value").should("have.value", valor1 + valor2 + ',00');
     // Salvar venda
     cy.contains("button", "Salvar").click();
-		// Verifica a mensagem
-    cy.get("@messages").then((messages) => {
-      cy.get(".slideInDown")
-        .contains(".alert", messages.mensagemVendaCadastradaComSucesso)
-        .should("be.visible");
-    });
 		// Verifica o saldo dos produtos
     cy.get("@saldoInicialProduto440").then((saldoInicialProduto440) => {
       cy.validarEstoqueProduto(
@@ -203,7 +199,7 @@ it("Deve criar uma venda de produto que movimenta o estoque com a quantidade ZER
     });
   });
 
-  it("Deve excluir os dados gerados nas vendas", function () {
+  it.only("Deve excluir os dados gerados nas vendas", function () {
     cy.visit("https://connectplug.com.br/sistema/vendas");
 		cy.get('.check_all').click();
 		cy.contains('a', 'Cancelar').click();

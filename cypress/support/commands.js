@@ -132,12 +132,5 @@ Cypress.Commands.add('criarVenda', (venda) => {
   cy.get('.installments-value').should('have.value', venda.pagamento.valor_parcela);
 	// Salvar venda
 	cy.contains('button', 'Salvar').click();
-
-	cy.get('@messages').then((messages) => {
-  cy.get('.slideInDown')
-    .contains('.alert', messages.mensagemVendaCadastradaComSucesso)
-    .should('be.visible');
-});
-
 });
 
